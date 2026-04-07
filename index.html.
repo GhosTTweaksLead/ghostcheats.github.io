@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT: EXTERNAL | CS2 CHEATS</title>
+    <style>
+        :root {
+            --primary: #00ff00;
+            --bg-dark: #050505;
+            --card-bg: #0f0f0f;
+            --text-main: #ffffff;
+            --accent: #1a1a1a;
+            --discord: #5865F2;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes blink { 50% { opacity: 0; } }
+        @keyframes scanline { 0% { bottom: 100%; } 100% { bottom: 0%; } }
+        @keyframes pulse { 0% { box-shadow: 0 0 5px var(--primary); } 50% { box-shadow: 0 0 20px var(--primary); } 100% { box-shadow: 0 0 5px var(--primary); } }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: rgba(0, 255, 0, 0.1);
+            z-index: 9999;
+            pointer-events: none;
+            animation: scanline 6s linear infinite;
+        }
+
+        header {
+            width: 100%;
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(circle, #111 0%, #050505 100%);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        h1 { color: var(--primary); font-size: 3rem; letter-spacing: 8px; text-shadow: 0 0 15px var(--primary); }
+
+        .status-container { margin-top: 20px; font-weight: bold; }
+        .blink-dot { color: var(--primary); animation: blink 1s step-start infinite; }
+
+        /* ADVANCED LOGIN & VERIFICATION */
+        .login-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 5px;
+            border: 1px solid var(--accent);
+            margin-top: -40px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            z-index: 10;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #000;
+            border: 1px solid #333;
+            color: var(--primary);
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--primary); }
+
+        .btn-action {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-action:hover { background: var(--primary); color: #000; }
+
+        /* AI CHATBOT UI */
+        #ai-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(0,255,0,0.2);
+        }
+
+        #chat-header {
+            background: var(--primary);
+            color: #000;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #chat-content { height: 200px; overflow-y: auto; padding: 10px; font-size: 0.8rem; display: flex; flex-direction: column; }
+        .msg { margin-bottom: 8px; padding: 5px 8px; border-radius: 5px; max-width: 80%; }
+        .ai-msg { background: #222; align-self: flex-start; color: var(--primary); }
+        .user-msg { background: var(--primary); color: #000; align-self: flex-end; }
+
+        #chat-input-area { display: flex; border-top: 1px solid #333; }
+        #chat-input { flex: 1; border: none; background: transparent; color: #fff; padding: 10px; font-size: 0.8rem; }
+
+        /* CONTENT CARDS */
+        .container { max-width: 900px; width: 90%; margin: 50px 0; }
+        .card { background: var(--card-bg); border: 1px solid var(--accent); padding: 30px; margin-bottom: 40px; border-radius: 4px; }
+        .promo-banner {
+            background: linear-gradient(90deg, #1a1a1a, #004400);
+            border: 2px dashed var(--primary);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .tutorial-box { background: #000; padding: 25px; border-left: 4px solid var(--primary); line-height: 1.6; }
+        footer { text-align: center; padding: 60px 20px; background: #0a0a0a; border-top: 1px solid var(--accent); }
+        .discord-btn { color: var(--discord); text-decoration: none; border: 1px solid var(--discord); padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CS2 EXTERNAL</h1>
+        <div class="status-container">STATUS: <span class="blink-dot">●</span> UNDETECTED</div>
+    </header>
+
+    <div class="login-section" id="auth-box">
+        <h2 id="auth-title">CLIENT LOGIN</h2>
+        <div id="step-1">
+            <input type="email" id="email" placeholder="E-Mail Adresse">
+            <input type="password" id="pass" placeholder="Passwort">
+            <button class="btn-action" onclick="showStep2()">NEXT: VERIFY EMAIL</button>
+        </div>
+        <div id="step-2" style="display:none;">
+            <p style="font-size: 0.8rem; color: #888;">Code an E-Mail gesendet (Simulation)</p>
+            <input type="text" id="code" placeholder="6-stelliger Code">
+            <button class="btn-action" onclick="finishLogin()">VERIFY & LOGIN</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="promo-banner">
+            🚀 ANGEBOT: 15% RABATT WENN DU ÜBER DISCORD KAUFST!
+        </div>
+
+        <div class="card">
+            <h2>WARUM UNSER CS2 CHEAT?</h2>
+            <p>Unsere Lösung läuft zu 100% extern. Keine Injection, kein Risiko.</p>
+            <p><i>"Jedes Build unserer Scripte wird vor der Veröffentlichung durch eine individuelle Obfuskation geschickt."</i></p>
+        </div>
+
+        <div class="card" style="text-align: center; border: 2px solid var(--primary); animation: pulse 3s infinite;">
+            <h2>JETZT ZUGANG SICHERN</h2>
+            <p>9.99€ / Monthly Access</p>
+            <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="AHDKC3EHD6K2Y"></script>
+        </div>
+
+        <div class="card">
+            <h2>🛠️ TUTORIAL: SETUP GUIDE</h2>
+            <div class="tutorial-box">
+                <p><i>"Okay guys, because some of you are clearly struggling, here is the 'no-brain' guide."</i></p>
+                <h3>1. Die Vorbereitung</h3>
+                <p>Installiere Python von python.org. Setze den Haken bei <b>"Add Python to PATH"</b>!</p>
+                <h3>2. Spiel starten</h3>
+                <p>Starte CS2 und bleib im Hauptmenü.</p>
+                <h3>3. Launch</h3>
+                <p>Rechtsklick auf dein Script -> "Run Python File in Terminal".</p>
+                <h3>4. Troubleshooting</h3>
+                <p><code>pip install pymem pyoverlay</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-chat">
+        <div id="chat-header"><span>SUPPORT AI (BETA)</span><span style="cursor:pointer" onclick="document.getElementById('ai-chat').style.display='none'">_</span></div>
+        <div id="chat-content">
+            <div class="msg ai-msg">Hallo! Ich bin die Project External KI. Wie kann ich dir bei deinem Setup helfen?</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Frage stellen..." onkeypress="if(event.key==='Enter') sendMessage()">
+        </div>
+    </div>
+
+    <footer>
+        <h2>SUPPORT</h2>
+        <a href="https://discord.gg/HrAW24QQ9" class="discord-btn">JOIN DISCORD SERVER</a>
+        <p style="margin-top: 20px; font-size: 0.7rem; color: #444;">&copy; 2026 PROJECT EXTERNAL. For experimental use only.</p>
+    </footer>
+
+    <script>
+        // LOGIN LOGIK SIMULATION
+        function showStep2() {
+            if(document.getElementById('email').value.includes('@')) {
+                document.getElementById('step-1').style.display = 'none';
+                document.getElementById('step-2').style.display = 'block';
+                document.getElementById('auth-title').innerText = 'VERIFICATION';
+            } else { alert('Bitte valide Email eingeben!'); }
+        }
+        function finishLogin() {
+            if(document.getElementById('code').value.length > 3) {
+                alert('Login erfolgreich! (Simuliert)');
+                document.getElementById('auth-box').innerHTML = '<h2 style="color:#0f0">WELCOME BACK, USER</h2><p>Client Status: Active</p>';
+            }
+        }
+
+        // KI CHAT LOGIK
+        function sendMessage() {
+            let input = document.getElementById('chat-input');
+            let content = document.getElementById('chat-content');
+            if(input.value.trim() === "") return;
+
+            content.innerHTML += `<div class="msg user-msg">${input.value}</div>`;
+            let userVal = input.value.toLowerCase();
+            input.value = "";
+
+            setTimeout(() => {
+                let response = "Ich verstehe. Für technische Probleme kontaktiere bitte den Live-Support im Discord.";
+                if(userVal.includes("install")) response = "Folge dem Tutorial auf der Seite: Installiere Python und nutze 'pip install'.";
+                if(userVal.includes("paypal") || userVal.includes("kaufen")) response = "Du kannst direkt über den PayPal Button zahlen oder im Discord für 15% Rabatt anfragen!";
+                if(userVal.includes("ban") || userVal.includes("detected")) response = "Unser Status ist aktuell UNDETECTED dank External-Technologie.";
+                
+                content.innerHTML += `<div class="msg ai-msg">${response}</div>`;
+                content.scrollTop = content.scrollHeight;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
