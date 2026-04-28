@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZENITH | Official Shop</title>
+    <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="AHDKC3EHD6K2Y"></script>
+    
+    <style>
+        :root {
+            --blue: #00d4ff;
+            --purple: #9b59b6;
+            --dark: #08080a;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background-color: var(--dark);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Animierter Glow im Hintergrund */
+        .gradient-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #08080a 100%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            sticky: top;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 28px; font-weight: 900; letter-spacing: 4px; color: var(--blue); text-transform: uppercase; }
+        .logo span { color: var(--purple); }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .hero h1 { font-size: 55px; margin-bottom: 10px; text-shadow: 0 0 30px rgba(0,212,255,0.4); }
+
+        /* Video Sektionen */
+        .video-container {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .instruction-step {
+            background: var(--glass);
+            border: 1px solid var(--blue);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,212,255,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px 8%;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s all ease;
+            backdrop-filter: blur(5px);
+            text-align: center;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--blue);
+            box-shadow: 0 10px 40px rgba(0,212,255,0.2);
+        }
+
+        .card h3 { font-size: 24px; margin-bottom: 15px; color: var(--blue); }
+        .card p { color: #ccc; font-size: 14px; margin-bottom: 25px; }
+
+        /* PayPal Button Styling Fix */
+        .paypal-box {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 12px;
+            min-height: 50px;
+        }
+
+        .discord-btn {
+            background: linear-gradient(45deg, #5865F2, #7289da);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .discord-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #5865F2; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="gradient-bg"></div>
+
+<nav>
+    <div class="logo">ZEN<span>ITH</span></div>
+    <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+</nav>
+
+<section class="hero">
+    <h1>ZENITH SERVICES</h1>
+    <p>Premium Exploits & Performance Optimization</p>
+    
+    <div class="instruction-step">
+        <h2 style="color: var(--blue);">SO GEHT'S NACH DEM KAUF:</h2>
+        <p>1. Gewünschte Produkte in den Warenkorb & Bezahlen.</p>
+        <p>2. <b>Screenshot der Bestätigung machen.</b></p>
+        <p>3. Join Discord & Ticket öffnen oder <b>bananause23</b> adden.</p>
+        <a href="https://discord.gg/4CsEdgzqh" class="discord-btn">ZUM DISCORD JOINEN</a>
+    </div>
+</section>
+
+<div class="grid">
+
+    <div class="card">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="socialVideoUrl.mp4" type="video/mp4">
+            </video>
+        </div>
+        <h3>Fortnite AI & Macros</h3>
+        <p>Aimbot Assistant, No-Recoil & Instant Triple Edits. Stream-Proof & Safe.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Counter Strike 2 Elite</h3>
+        <p>Internal Multi-Hack. ESP, Wallhack, Skin Changer & Legit Aimbot.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Roblox Multi-Tool</h3>
+        <p>Universal Script Executor, Speed, Fly & Auto-Farm for all Games.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Aim Tweaks & Zero Delay</h3>
+        <p>Eliminate Input Lag (0.0ms) and get the stickiest Aim possible.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>FPS Boost & Windows Tune</h3>
+        <p>Full System Optimization. Get up to 200+ more FPS and stable Endgames.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Ping Reducer & Network</h3>
+        <p>Optimized routing for the lowest possible ping and zero packet loss.</p>
+        <div class="paypal-box">
+             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p style="text-align: center; padding: 40px; color: #555;">© 2026 ZENITH | Support via Discord: bananause23</p>
+</footer>
+
+<script>
+  // Initialisiert die Cart-Funktion für alle Buttons
+  cartPaypal.Cart({ id: "pp-view-cart" });
+</script>
+
+</body>
+</html>
